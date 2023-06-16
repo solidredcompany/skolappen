@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:skolappen/core/localizations.dart';
 
 /// The shell page displays the bottom navigation bar and manages its pages.
 class ShellPage extends ConsumerWidget {
@@ -26,18 +27,18 @@ class ShellPage extends ConsumerWidget {
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
-        destinations: const [
+        destinations: [
           NavigationDestination(
-            label: 'Home',
-            icon: Icon(Icons.home),
+            label: Strings.homeTitle,
+            icon: const Icon(Icons.home),
           ),
           NavigationDestination(
-            label: 'Schedule',
-            icon: Icon(Icons.settings),
+            label: Strings.scheduleTitle,
+            icon: const Icon(Icons.settings),
           ),
           NavigationDestination(
-            label: 'Menu',
-            icon: Icon(Icons.menu),
+            label: Strings.menuTitle,
+            icon: const Icon(Icons.menu),
           ),
         ],
         onDestinationSelected: _goBranch,

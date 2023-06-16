@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:skolappen/core/localizations.dart';
 import 'package:skolappen/core/router.dart';
 
 /// A menu containing less commonly used features.
@@ -12,15 +13,15 @@ class MenuPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Menu'),
+        title: Text(Strings.menuTitle),
       ),
       body: ListView(
         children: ListTile.divideTiles(
           context: context,
           tiles: [
             ListTile(
-              title: const Text('Licenses'),
-              subtitle: const Text('Show licenses for third-party software'),
+              title: Text(Strings.licensesTitle),
+              subtitle: Text(Strings.licensesDescription),
               onTap: () => ref.read(routerProvider).go('/menu/licenses'),
             ),
           ],

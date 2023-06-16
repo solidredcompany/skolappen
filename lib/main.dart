@@ -1,4 +1,5 @@
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,14 +9,25 @@ import 'package:skolappen/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(
-    const ProviderScope(
-      child: MyApp(),
+    ProviderScope(
+      child: EasyLocalization(
+        supportedLocales: const [
+          Locale('en'),
+          Locale('sv'),
+        ],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        useFallbackTranslations: true,
+        useOnlyLangCode: true,
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -54,6 +66,9 @@ class MyApp extends ConsumerWidget {
           theme: themeFromColorScheme(lightColorScheme),
           darkTheme: themeFromColorScheme(darkColorScheme),
           routerConfig: ref.watch(routerProvider),
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
         );
       },
     );

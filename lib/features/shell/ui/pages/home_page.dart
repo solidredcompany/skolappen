@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:skolappen/core/localizations.dart';
 
 /// The home page of the app that displays a summary of useful information.
 ///
@@ -11,7 +12,7 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text(Strings.homeTitle),
       ),
     );
   }
