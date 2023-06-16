@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:skolappen/core/router.dart';
 import 'package:skolappen/core/theme/theme.dart';
+import 'package:skolappen/core/ui/widgets/shimmer_loading.dart';
 import 'package:skolappen/firebase_options.dart';
 
 void main() async {
@@ -69,6 +70,24 @@ class MyApp extends ConsumerWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
+          builder: (context, child) {
+            final colors = Theme.of(context).colorScheme;
+
+            return Shimmer(
+              linearGradient: LinearGradient(
+                colors: [
+                  Color.lerp(colors.background, colors.primary, 0.05)!,
+                  Color.lerp(colors.background, colors.primary, 0.1)!,
+                  Color.lerp(colors.background, colors.primary, 0.05)!,
+                ],
+                stops: const [0.1, 0.3, 0.4],
+                begin: const Alignment(-1.0, -0.3),
+                end: const Alignment(1.0, 0.3),
+                tileMode: TileMode.clamp,
+              ),
+              child: child!,
+            );
+          },
         );
       },
     );
