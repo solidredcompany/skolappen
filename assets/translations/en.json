@@ -3,5 +3,12 @@
     "scheduleTitle": "Schedule",
     "menuTitle": "Menu",
     "licensesTitle": "Licenses",
-    "licensesDescription": "Show licenses for third-party libraries used in this app"
+    "licensesDescription": "Show licenses for third-party libraries used in this app",
+    "selectedSchoolLoadingError": "The selected school could not be loaded",
+    "welcomeMessage": "Welcome to skolappen!",
+    "selectSchoolMessage": "Welcome to skolappen! Please select your school to see the most relevant information for you. We have selected a demo school for you, if you just want to explore the app's features.",
+    "selectSchoolButton": "Select a school",
+    "selectSchoolTitle": "Select School",
+    "changeSchoolTitle": "Change School",
+    "changeSchoolDescription": "Change to another school"
 }
