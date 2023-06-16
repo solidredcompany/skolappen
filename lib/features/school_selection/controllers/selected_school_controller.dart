@@ -6,12 +6,10 @@ part 'selected_school_controller.g.dart';
 /// The controller that holds the currently selected school.
 ///
 /// To change the selected school, use the [select] method.
-@riverpod
+@Riverpod(keepAlive: true)
 class SelectedSchoolController extends _$SelectedSchoolController {
   @override
   Future<School?> build() async {
-    ref.keepAlive();
-
     // TODO: Retrieve the selected school from storage.
 
     return null;

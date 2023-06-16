@@ -10,5 +10,7 @@
     "selectSchoolButton": "Select a school",
     "selectSchoolTitle": "Select School",
     "changeSchoolTitle": "Change School",
-    "changeSchoolDescription": "Change to another school"
+    "changeSchoolDescription": "Change to another school",
+    "todaysLunchTitle": "Today's Lunch",
+    "todaysLunchLoadingError": "Today's lunch could not be loaded"
 }

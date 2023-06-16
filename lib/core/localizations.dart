@@ -21,4 +21,6 @@ class Strings {
   static String get selectSchoolTitle => 'selectSchoolTitle'.tr();
   static String get changeSchoolTitle => 'changeSchoolTitle'.tr();
   static String get changeSchoolDescription => 'changeSchoolDescription'.tr();
+  static String get todaysLunchTitle => 'todaysLunchTitle'.tr();
+  static String get todaysLunchLoadingError => 'todaysLunchLoadingError'.tr();
 }
