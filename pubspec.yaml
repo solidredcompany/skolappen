@@ -39,6 +39,7 @@ dependencies:
   flutter_riverpod: ^2.3.6
   riverpod_annotation: ^2.1.1
   material_design_icons_flutter: ^7.0.7296
+  firebase_core: ^2.14.0
   dynamic_color: ^1.6.5
 
 dev_dependencies:
